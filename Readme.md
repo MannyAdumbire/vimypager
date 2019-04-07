@@ -1,9 +1,10 @@
 
 --ABOUT--
 
-ViMypager is a plugin which soothes out some kinks when vim is used as pager for mysql.
+ViMypager is a plugin which soothes out most of the clunkyness when vim is used as pager for mysql.
 
-By default it exhibits the immediate exit feature of the less pager, as described on the Mysql version 5.7 man page :
+Default behaviour is to print to stdout if the screen is large enough. 
+This is Similar to using the less flags ( -F, -X) as described on the Mysql version 5.7 man page :
 
 >>>> The -F and -X options may be used with less to cause it to exit if output fits on one screen, which is convenient when no scrolling is necessary:
 >>>> mysql> pager less -n -i -S -F -X
@@ -25,6 +26,5 @@ vim -R -c 'set nomod nonu' -c 'silent call vimypager#Run()' -
 Here is are contents to a sample .my.cnf file which uses vimypager:
 
 [mysql]
-prompt=(\\u@\\h) [\\d]>\\_
-pager=vim -R -c 'set nomod nonu' -c 'silent call vimypager#Run()' -
+ pager=vim -R -c 'set nomod nonu' -c 'silent call vimypager#Run()' -
 
